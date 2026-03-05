@@ -19,14 +19,14 @@
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <0 3 6>;
+        layers = <0 1 2 3 5 6>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         scale-multiplier = <1>;
         scale-divisor = <2>;
 
-        // bindings = <&ib_toggle_layer 7>;
+        bindings = <&ib_toggle_layer 4>;
     };
 
     /* input config for snipe mode */
@@ -34,7 +34,7 @@
     trackball_snipe_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <10>;
+        layers = <4>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -72,18 +72,13 @@
         time-to-live-ms = <750>;
     };
 
-    // #define QUERTZ    0
-    // #define NUMBERS   1
-    // #define NAV-FUN   2
-    // #define MAC       3
-    // #define MAC-NUM   4
-    // #define MAC-NAV   5
-    // #define GAME      6
-    // #define GAME-NUM  7
-    // #define GAME-NAV  8
-    // #define SCROLL    9
-    // #define SNIPER   10
-    // #define FN       11
+    // #define QWERTY    0
+    // #define RAISE     1
+    // #define LOWER     2
+    // #define SCROLL    3
+    // #define SNIPER    4
+    // #define FN        5
+    // #define WORKMAN   6
 
     combos { compatible = "zmk,combos"; };
 
@@ -141,7 +136,7 @@
                                                         &trans        &trans          &trans
             >;
 
-            label = "NUMBERS";
+            label = "RAISE";
         };
 
         win_lower_layer {
@@ -154,7 +149,7 @@
                                                      &trans        &trans          &trans
             >;
 
-            label = "NAV-FUN";
+            label = "LOWER";
         };
 
         scroll_layer {
